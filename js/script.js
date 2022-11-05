@@ -8,4 +8,23 @@ Consigli del giorno:
 * Dividete in piccoli problemi la consegna.
 * Individuate gli elementi di cui avete bisogno per realizzare il programma.
 Attenzione che usando Google Chrome, il prompt può dare problemi con la visualizzazione dei numeri in pagina sui tempi di refresh del dom, lasciando i numeri visibili mentre il prompt è aperto.
- */
+*/
+
+
+
+const elePlayButton = document.querySelector('.play-button');
+const eleGameContainers = document.querySelector('.game-containers');
+const eleTest = document.querySelector('.test');
+
+elePlayButton.addEventListener('click', gameScript)
+
+function gameScript() {
+    eleGameContainers.classList.add('show')
+    setTimeout(removeShows, 5000);
+    function removeShows() {
+        console.log('timer funziona')
+        eleTest.classList.add('hidden');
+    }  
+}
+
+
