@@ -19,12 +19,16 @@ const eleTest = document.querySelector('.test');
 elePlayButton.addEventListener('click', gameScript)
 
 function gameScript() {
+    let arrListNumbers = Array.from({length: 5}, () => Math.floor(Math.random() * 8) + 1);
     eleGameContainers.classList.add('show')
     setTimeout(removeShows, 5000);
     function removeShows() {
         console.log('timer funziona')
         eleTest.classList.add('hidden');
-    }  
+    }
+    console.log(arrListNumbers);
 }
+
+
 
 
