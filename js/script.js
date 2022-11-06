@@ -35,7 +35,39 @@ function gameScript() {
         //console.log('timer funziona')
         eleNumbersCont.classList.add('hidden');
     }
+
+    let counter = 0;
+    let arrNumGuessed = [];
+
+    setTimeout(whichNumbersTime, 10000);
+    function whichNumbersTime() {
+        for(i = 0; i < arrListNumbers.length; i++){
+            let whichNumber = parseInt(prompt("Quale numbero?"));
+            if (whichNumber == arrListNumbers[i]) {
+                counter++;
+                arrNumGuessed.push(whichNumber);
+            }
+            // else {
+            //     counter++;
+            //     arrListNumbers.push('x');
+            // }
+        }
+        console.log(counter);
+        console.log(arrNumGuessed);
+        const eleWin = document.createElement('div');
+        eleWin.innerHTML = `You guessed: ${counter}`;
+        eleGameContainers.append(eleWin);
+
+        for(i = 0; i < arrNumGuessed.length; i++) {
+            const eleGuesed = document.createElement('span');
+            eleGuesed.innerHTML = arrNumGuessed[i];
+            eleGameContainers.append(eleGuesed);
+        }
+    }
 }
+
+
+
 
 
 
