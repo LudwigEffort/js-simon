@@ -14,19 +14,27 @@ Attenzione che usando Google Chrome, il prompt può dare problemi con la visuali
 
 const elePlayButton = document.querySelector('.play-button');
 const eleGameContainers = document.querySelector('.game-containers');
-const eleTest = document.querySelector('.test');
+const eleNumbersCont = document.querySelector('.numbers-containers');
+//const eleTest = document.querySelector('.test');
 
 elePlayButton.addEventListener('click', gameScript)
 
 function gameScript() {
+    //reset
     let arrListNumbers = Array.from({length: 5}, () => Math.floor(Math.random() * 8) + 1);
     eleGameContainers.classList.add('show')
+    //add print arr
+    for(i = 0; i < arrListNumbers.length; i++) {
+        const eleSpan = document.createElement('span');
+        eleSpan.classList.add('arr-numbers');
+        eleSpan.innerHTML = arrListNumbers[i];
+        eleNumbersCont.append(eleSpan);
+    }
     setTimeout(removeShows, 5000);
     function removeShows() {
-        console.log('timer funziona')
-        eleTest.classList.add('hidden');
+        //console.log('timer funziona')
+        eleNumbersCont.classList.add('hidden');
     }
-    console.log(arrListNumbers);
 }
 
 
